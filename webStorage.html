@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn" onclick="add()">add</button>
+
+    <script>
+      const x = document.getElementById("btn");
+
+      //   localStorage.setItem("data", "webo");
+      console.log(localStorage.getItem("data"));
+      const l = localStorage.getItem("data");
+      x.innerHTML = l;
+
+      sessionStorage.setItem("data", "sessions");
+      const s = sessionStorage.getItem("data");
+      //   x.innerHTML = s;
+      s ? (x.innerHTML = l) : (x.innerHTML = s);
+    </script>
+  </body>
+</html>
