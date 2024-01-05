@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NavBar</title>
+    <style>
+      .navbar {
+        background-color: green;
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .elements {
+        height: 100%;
+        width: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10px;
+      }
+      .left,
+      .right {
+        display: flex;
+        align-items: center;
+      }
+      .elements:hover {
+        color: aliceblue;
+        cursor: pointer;
+      }
+      .active {
+        color: aliceblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar">
+        <div class="left">
+          <div class="elements active">Home</div>
+          <div class="elements">About</div>
+          <div class="elements">Help</div>
+        </div>
+        <div class="right">
+          <div class="elements">More</div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const ele = document.getElementsByClassName("elements");
+      console.log(ele);
+      for (let index = 0; index < ele.length; index++) {
+        ele[index].addEventListener("click", () => {
+          var doc = document.getElementsByClassName("active");
+          doc[0].className = doc[0].className.replace("active", "");
+          ele[index].className += " active";
+        });
+      }
+
+      //   const x = document.querySelectorAll("div");
+      //   console.log(x);
+    </script>
+  </body>
+</html>
