@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="set"></h1>
+    <p id="num">0</p>
+    <button onclick="add()" id="inc">add</button>
+
+    <script>
+      const x = document.getElementById("set");
+      let sum1 = 0;
+      console.log("calculating.....");
+      for (let index = 0; index < 5000000000; index++) {
+        sum1 += index;
+      }
+
+      x.innerHTML = 42;
+
+      console.log("done.");
+      const a = document.getElementById("num");
+      let sum = 0;
+      const add = () => {
+        sum += 1;
+        a.innerHTML = sum;
+      };
+
+      //   uncomment this code to see the power of webworkers
+
+      //   const worker = new Worker("load.js");
+      //   worker.postMessage("start");
+      //   worker.onmessage = (ev) => {
+      //     x.innerHTML = `the answer is : ${ev.data}`;
+      // };
+    </script>
+  </body>
+</html>
