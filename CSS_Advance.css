@@ -1,0 +1,41 @@
+/* color gradient */
+body {
+  display: flex;
+  justify-content: center;
+}
+.line {
+  display: inline-block;
+}
+
+div:first-child {
+  border-radius: 50%;
+  border: 1px solid transparent;
+  width: 100px;
+  height: 100px;
+  box-shadow: 8px 8px 15px red;
+  transition: height 2s;
+  background-color: orange;
+
+  animation-name: e;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes e {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(240deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
